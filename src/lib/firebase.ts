@@ -15,12 +15,12 @@ import {
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY?.trim() || '',
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN?.trim() || '',
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID?.trim() || '',
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET?.trim() || '',
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID?.trim() || '',
-  appId: import.meta.env.VITE_FIREBASE_APP_ID?.trim() || '',
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY?.trim() || 'AIzaSyBZsGkcKodgGlntZ6ar4zg-pGHws6KhWzo',
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN?.trim() || 'careerbridge-unklab.firebaseapp.com',
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID?.trim() || 'careerbridge-unklab',
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET?.trim() || 'careerbridge-unklab.firebasestorage.app',
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID?.trim() || '947989321689',
+  appId: import.meta.env.VITE_FIREBASE_APP_ID?.trim() || '1:947989321689:web:9aa8267754288450fb6bc8',
 };
 
 export const isFirebaseConfigured = Boolean(
