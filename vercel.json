@@ -1,0 +1,31 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/kmclass",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/kmclass/assets/:path*",
+      "destination": "/assets/:path*"
+    },
+    {
+      "source": "/kmclass/favicon.svg",
+      "destination": "/favicon.svg"
+    },
+    {
+      "source": "/kmclass/kerangka-konseptual.png",
+      "destination": "/kerangka-konseptual.png"
+    },
+    {
+      "source": "/kmclass",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/kmclass/:path*",
+      "destination": "/index.html"
+    }
+  ]
+}

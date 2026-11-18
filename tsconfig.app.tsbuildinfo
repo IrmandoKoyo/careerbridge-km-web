@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/aboutandtestingviews.tsx","./src/components/entrydetailview.tsx","./src/components/searchmodal.tsx","./src/config/drivelinks.ts","./src/data/careerbridgedata.ts","./src/hooks/usesubpathroute.ts","./src/lib/firebase.ts"],"version":"5.6.3"}
