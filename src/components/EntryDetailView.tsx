@@ -19,7 +19,7 @@ import {
   type KnowledgeEntry,
 } from '../data/careerbridgeData';
 import type { RouteView } from '../hooks/useSubpathRoute';
-import { DRIVE_LINKS, hasDriveUrl } from '../config/driveLinks';
+import { getEntryDocUrl, getTemplateUrl } from '../config/driveLinks';
 import {
   fetchEntryVotes,
   getLocalVotedSet,
@@ -44,7 +44,6 @@ export function EntryDetailView({ entryNo, onNavigate }: EntryDetailViewProps) {
   const [votesMap, setVotesMap] = useState<Record<number, number>>({});
   const [hasVoted, setHasVoted] = useState(false);
   const [tpaAnswers, setTpaAnswers] = useState<Record<number, number>>({});
-  const [driveNotice, setDriveNotice] = useState(false);
 
   useEffect(() => {
     try {
@@ -58,7 +57,6 @@ export function EntryDetailView({ entryNo, onNavigate }: EntryDetailViewProps) {
       setCheckedItems(entry.checklist.map(() => false));
     }
     setHasVoted(getLocalVotedSet().includes(entry.no));
-    setDriveNotice(false);
   }, [entry.no, entry.checklist.length]);
 
   useEffect(() => {
@@ -164,10 +162,10 @@ export function EntryDetailView({ entryNo, onNavigate }: EntryDetailViewProps) {
                         : 'border-transparent text-zinc-500 hover:border-zinc-300 hover:text-zinc-900 dark:text-zinc-400 dark:hover:border-zinc-700 dark:hover:text-zinc-200'
                     }`}
                   >
-                    <span className="font-mono text-[11px] text-zinc-400">
+                    <span className="shrink-0 font-mono text-[11px] text-zinc-400">
                       {String(item.no).padStart(2, '0')}
                     </span>
-                    <span className="line-clamp-1">{item.shortTitle}</span>
+                    <span className="leading-snug">{item.shortTitle}</span>
                   </button>
                 );
               })}
@@ -408,44 +406,37 @@ export function EntryDetailView({ entryNo, onNavigate }: EntryDetailViewProps) {
                   <p className="font-mono text-[10px] uppercase tracking-wider text-zinc-500">
                     {entry.driveFolderTag}
                   </p>
-                  <p className="truncate text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                  <p className="break-all text-sm font-medium text-zinc-900 sm:truncate dark:text-zinc-100">
                     {entry.templateFile}
                   </p>
                 </div>
               </div>
-              {hasDriveUrl() ? (
-                <a
-                  href={DRIVE_LINKS.mainFolderUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-md bg-[#16263B] px-3.5 py-2 text-xs font-medium text-white transition hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950"
-                >
-                  Buka Dokumen
-                  <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
-                </a>
-              ) : (
-                <button
-                  onClick={() => setDriveNotice((v) => !v)}
-                  className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-md border border-zinc-300 bg-white px-3.5 py-2 text-xs font-medium text-zinc-800 transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-                >
-                  Lihat Berkas
-                  <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
-                </button>
-              )}
-            </div>
-
-            {driveNotice && !hasDriveUrl() && (
-              <div className="mb-4 rounded-md border border-zinc-300 bg-zinc-50 p-3 text-xs text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300">
-                Tautan folder Google Drive sedang disiapkan. Lihat daftar berkas lengkap di halaman{' '}
-                <button
-                  onClick={() => onNavigate({ page: 'downloads' })}
-                  className="font-semibold text-zinc-900 underline dark:text-white"
-                >
-                  Sumber &amp; Template
-                </button>
-                .
+              <div className="flex shrink-0 flex-wrap items-center gap-2">
+                {getEntryDocUrl(entry.no) && (
+                  <a
+                    href={getEntryDocUrl(entry.no)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-[38px] flex-1 items-center justify-center gap-1.5 rounded-md bg-[#16263B] px-3.5 py-2 text-xs font-medium text-white transition hover:bg-zinc-800 sm:flex-initial dark:bg-zinc-100 dark:text-zinc-950"
+                  >
+                    Buka Naskah Google Docs
+                    <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
+                  </a>
+                )}
+                {getTemplateUrl(entry.templateFile) &&
+                  getTemplateUrl(entry.templateFile) !== getEntryDocUrl(entry.no) && (
+                    <a
+                      href={getTemplateUrl(entry.templateFile)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex min-h-[38px] flex-1 items-center justify-center gap-1.5 rounded-md border border-zinc-300 bg-white px-3.5 py-2 text-xs font-medium text-zinc-800 transition hover:bg-zinc-100 sm:flex-initial dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+                    >
+                      Unduh Template Kerja
+                      <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
+                    </a>
+                  )}
               </div>
-            )}
+            </div>
 
             <div className="space-y-2">
               {entry.checklist.map((chk, idx) => {

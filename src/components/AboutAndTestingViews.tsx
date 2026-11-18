@@ -17,6 +17,7 @@ import {
   EXPLICIT_SOURCES,
   FAQ_ITEMS,
   INTERVIEWEES,
+  KNOWLEDGE_ENTRIES,
   PROJECT_META,
   ROSTER_TEAM,
   SECI_PHASES,
@@ -24,7 +25,13 @@ import {
 } from '../data/careerbridgeData';
 import type { RouteView } from '../hooks/useSubpathRoute';
 import { BASE_PATH } from '../hooks/useSubpathRoute';
-import { DRIVE_LINKS, hasDriveUrl, hasSheetUrl } from '../config/driveLinks';
+import {
+  DRIVE_LINKS,
+  getEntryDocUrl,
+  getTemplateUrl,
+  hasDriveUrl,
+  hasSheetUrl,
+} from '../config/driveLinks';
 import {
   fetchUserTestingFeedbacks,
   isFirebaseConfigured,
@@ -51,7 +58,7 @@ export function DownloadsView({ onNavigate }: { onNavigate: (r: RouteView) => vo
           </p>
         </div>
         <div className="grid grid-cols-1 gap-2.5 sm:flex sm:flex-wrap">
-          {hasDriveUrl() ? (
+          {hasDriveUrl() && (
             <a
               href={DRIVE_LINKS.mainFolderUrl}
               target="_blank"
@@ -62,10 +69,6 @@ export function DownloadsView({ onNavigate }: { onNavigate: (r: RouteView) => vo
               Buka Google Drive
               <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
             </a>
-          ) : (
-            <span className="rounded-md border border-zinc-200 bg-white px-3.5 py-2.5 text-xs text-zinc-500 dark:border-zinc-800 dark:bg-[#121417] dark:text-zinc-400">
-              Arsip Folder Google Drive publik sedang disiapkan untuk ditautkan.
-            </span>
           )}
           {hasSheetUrl() && (
             <a
@@ -82,45 +85,108 @@ export function DownloadsView({ onNavigate }: { onNavigate: (r: RouteView) => vo
         </div>
       </header>
 
+      {/* Naskah Google Docs 10 Panduan Utama */}
+      <section>
+        <div className="mb-4">
+          <h2 className="font-display text-lg font-bold text-zinc-950 dark:text-white">
+            Naskah Google Docs 10 Panduan Utama (Bagian 01–10)
+          </h2>
+          <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+            Salinan dokumen lengkap format 6 poin yang tersimpan di Google Drive dan dapat diakses atau diunduh langsung.
+          </p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {KNOWLEDGE_ENTRIES.map((entry) => {
+            const docUrl = getEntryDocUrl(entry.no);
+            const cleanEntryTitle = entry.title.replace(/^Entri \d+:\s*/, '');
+            return (
+              <div
+                key={entry.no}
+                className="flex min-w-0 flex-col justify-between rounded-md border border-zinc-200 bg-white p-4 transition hover:border-zinc-400 dark:border-zinc-800 dark:bg-[#121417] dark:hover:border-zinc-600"
+              >
+                <div className="min-w-0">
+                  <div className="mb-1.5 flex items-center justify-between gap-2 font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
+                    <span className="font-semibold text-[#8A5A1E] dark:text-[#D4A373]">
+                      Bagian {String(entry.no).padStart(2, '0')}
+                    </span>
+                    <span>{entry.subkategoriLabel.replace(/^Kategori \d+:\s*/, '')}</span>
+                  </div>
+                  <h3 className="text-sm font-semibold leading-snug text-zinc-950 dark:text-zinc-100">
+                    {cleanEntryTitle}
+                  </h3>
+                  <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                    Penulis Utama: {entry.penulisUtama.replace(/\s*\(Orang \d+.*?\)/, '')}
+                  </p>
+                </div>
+                <div className="mt-3.5 flex flex-wrap items-center justify-between gap-2 border-t border-zinc-100 pt-3 dark:border-zinc-800">
+                  <button
+                    onClick={() => onNavigate({ page: 'entry', entryNo: entry.no })}
+                    className="text-xs font-medium text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
+                  >
+                    Baca di Portal Web
+                  </button>
+                  {docUrl && (
+                    <a
+                      href={docUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-[#16263B] hover:underline dark:text-[#D4A373]"
+                    >
+                      Buka Google Docs
+                      <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* Daftar Berkas */}
       <section>
         <h2 className="font-display mb-4 text-lg font-bold text-zinc-950 dark:text-white">
           Direktori Templat Siap Pakai
         </h2>
         <div className="grid gap-4 md:grid-cols-2">
-          {DRIVE_ASSETS.map((item) => (
-            <div
-              key={item.fileName}
-              className="flex min-w-0 flex-col justify-between rounded-md border border-zinc-200 bg-white p-4 transition hover:border-zinc-400 sm:p-5 dark:border-zinc-800 dark:bg-[#121417] dark:hover:border-zinc-600"
-            >
-              <div className="min-w-0">
-                <div className="mb-2 flex flex-wrap items-center justify-between gap-2 font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
-                  <span>{item.folderCode}</span>
-                  <span>{item.forEntries}</span>
+          {DRIVE_ASSETS.map((item) => {
+            const matchEntry = item.forEntries.match(/\d+/);
+            const fallbackEntryNo = matchEntry ? Number(matchEntry[0]) : 1;
+            const targetUrl = getTemplateUrl(item.fileName, fallbackEntryNo);
+            return (
+              <div
+                key={item.fileName}
+                className="flex min-w-0 flex-col justify-between rounded-md border border-zinc-200 bg-white p-4 transition hover:border-zinc-400 sm:p-5 dark:border-zinc-800 dark:bg-[#121417] dark:hover:border-zinc-600"
+              >
+                <div className="min-w-0">
+                  <div className="mb-2 flex flex-wrap items-center justify-between gap-2 font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
+                    <span>{item.folderCode}</span>
+                    <span>{item.forEntries}</span>
+                  </div>
+                  <p className="truncate font-mono text-[11px] text-zinc-400">{item.folderName}/</p>
+                  <h3 className="mt-1 break-all text-sm font-semibold text-zinc-950 sm:break-words sm:text-base dark:text-zinc-100">
+                    {item.fileName}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-zinc-600 sm:text-sm dark:text-zinc-300">
+                    {item.description}
+                  </p>
                 </div>
-                <p className="truncate font-mono text-[11px] text-zinc-400">{item.folderName}/</p>
-                <h3 className="mt-1 break-all text-sm font-semibold text-zinc-950 sm:break-words sm:text-base dark:text-zinc-100">
-                  {item.fileName}
-                </h3>
-                <p className="mt-2 text-xs leading-relaxed text-zinc-600 sm:text-sm dark:text-zinc-300">
-                  {item.description}
-                </p>
+                {targetUrl && (
+                  <div className="mt-4 border-t border-zinc-100 pt-3 dark:border-zinc-800">
+                    <a
+                      href={targetUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-[#16263B] hover:underline dark:text-[#D4A373]"
+                    >
+                      Buka Dokumen di Google Drive
+                      <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                )}
               </div>
-              {hasDriveUrl() && (
-                <div className="mt-4 border-t border-zinc-100 pt-3 dark:border-zinc-800">
-                  <a
-                    href={DRIVE_LINKS.mainFolderUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-[#16263B] hover:underline dark:text-[#D4A373]"
-                  >
-                    Akses di Google Drive
-                    <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
-                  </a>
-                </div>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
