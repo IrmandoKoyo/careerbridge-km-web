@@ -66,7 +66,19 @@ export function DownloadsView({ onNavigate }: { onNavigate: (r: RouteView) => vo
               className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md bg-[#16263B] px-4 py-2.5 text-xs font-medium text-white transition hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950"
             >
               <FolderOpen strokeWidth={1.5} className="h-4 w-4" />
-              Buka Google Drive
+              Buka Google Drive Utama
+              <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
+            </a>
+          )}
+          {DRIVE_LINKS.folder04Url && (
+            <a
+              href={DRIVE_LINKS.folder04Url}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-300 bg-white px-4 py-2.5 text-xs font-medium text-zinc-800 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-[#121417] dark:text-zinc-200"
+            >
+              <FolderOpen strokeWidth={1.5} className="h-4 w-4" />
+              Folder 04 (Dokumentasi)
               <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
             </a>
           )}
@@ -78,7 +90,7 @@ export function DownloadsView({ onNavigate }: { onNavigate: (r: RouteView) => vo
               className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-300 bg-white px-4 py-2.5 text-xs font-medium text-zinc-800 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-[#121417] dark:text-zinc-200"
             >
               <FileSpreadsheet strokeWidth={1.5} className="h-4 w-4" />
-              Log Kontribusi
+              Log Kontribusi (Sheets)
               <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
             </a>
           )}
@@ -172,16 +184,40 @@ export function DownloadsView({ onNavigate }: { onNavigate: (r: RouteView) => vo
                   </p>
                 </div>
                 {targetUrl && (
-                  <div className="mt-4 border-t border-zinc-100 pt-3 dark:border-zinc-800">
+                  <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-zinc-100 pt-3 dark:border-zinc-800">
                     <a
                       href={targetUrl}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-1.5 text-xs font-medium text-[#16263B] hover:underline dark:text-[#D4A373]"
                     >
-                      Buka Dokumen di Google Drive
+                      {item.fileName.includes('FINAL_REPORT')
+                        ? 'Buka Final Report'
+                        : 'Buka Dokumen di Google Docs'}
                       <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
                     </a>
+                    {item.fileName.includes('FINAL_REPORT') && hasSheetUrl() && (
+                      <a
+                        href={DRIVE_LINKS.logSheetUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600 hover:text-zinc-950 hover:underline dark:text-zinc-400 dark:hover:text-white"
+                      >
+                        Buka Google Sheets Log
+                        <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
+                      </a>
+                    )}
+                    {item.folderCode === 'Folder 04' && DRIVE_LINKS.folder04Url && (
+                      <a
+                        href={DRIVE_LINKS.folder04Url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600 hover:text-zinc-950 hover:underline dark:text-zinc-400 dark:hover:text-white"
+                      >
+                        Buka Folder 04
+                        <ArrowUpRight strokeWidth={1.5} className="h-3.5 w-3.5" />
+                      </a>
+                    )}
                   </div>
                 )}
               </div>
