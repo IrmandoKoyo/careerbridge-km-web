@@ -1139,7 +1139,7 @@ export const SECI_PHASES = [
     phase: '3. Combination',
     mode: 'Explicit → Explicit',
     actor: 'Tim Research, Content Writer & Web Designer',
-    desc: 'Memadukan catatan tacit terstruktur dengan regulasi PP 35/2021, metodologi STAR, TPA BUMN, dan standar CV ATS ke dalam 10 entri 6 poin seragam, 10 FAQ, dan 4 folder modul Drive di portal web ini.',
+    desc: 'Memadukan catatan tacit terstruktur dengan regulasi PP 35/2021, metodologi STAR, TPA BUMN, dan standar CV ATS ke dalam 10 entri 6 poin seragam, 10 FAQ, dan 6 folder modul Drive di portal web ini.',
   },
   {
     phase: '4. Internalization',
