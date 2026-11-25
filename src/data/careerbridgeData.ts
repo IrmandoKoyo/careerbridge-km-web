@@ -182,7 +182,7 @@ export const ROSTER_TEAM: TeamMember[] = [
     nama: 'Irmando Koyo',
     peran: 'Tim Content Writer 2 (Kategori 3 & 4)',
     tugasOperasional:
-      'Menyusun, mengedit, dan menyeragamkan Entri 6 s/d Entri 10 ke Format Standar 6 Poin & integrasi web portal',
+      'Menyusun, mengedit, dan menyeragamkan Entri 6 s/d Entri 10 ke Format Standar 6 Poin, penyunting Bab IV–V, serta integrasi konten, Google Drive, & repositori GitHub portal web',
     entriUtama: 'Entri 7 (Wawancara HRD & User Metode STAR) + Editor Entri 6–10',
     entriNo: 7,
   },
@@ -200,7 +200,7 @@ export const ROSTER_TEAM: TeamMember[] = [
     nama: 'Alexander Jonatan Tukoshi Rantung',
     peran: 'Dokumentasi & Quality Control',
     tugasOperasional:
-      'Menyusun Laporan Akhir, Log Kontribusi (Google Sheets), Halaman 10 FAQ, & mengelola Uji Coba Pengguna Luar',
+      'Menyusun Laporan Akhir Lengkap, Log Kontribusi (Google Sheets), Halaman 10 FAQ, & Pengendalian Kualitas (QC)',
     entriUtama: 'Entri 9 (Budaya Kerja & Probation 90 Hari) + FAQ, Log & QC',
     entriNo: 9,
   },
@@ -209,7 +209,7 @@ export const ROSTER_TEAM: TeamMember[] = [
 export const INTERVIEWEES: Interviewee[] = [
   {
     kode: 'NS-1',
-    nama: 'Bapak Oliver Patrick Lumentra',
+    nama: 'Bapak Oliver Patrick Lumenta',
     latar: 'Alumni UNKLAB Angkatan ke-85 (Lulus 2021)',
     jabatan: 'Area Sales Manager & User Interviewer — PT Sinar Makmur Timur (Orang Tua Group)',
     industri: 'Korporat Swasta Nasional (FMCG Beverage)',
@@ -305,7 +305,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       {
         quote:
           'Mencari kerja untuk menunjang tujuan karir jangka panjang tidak cukup hanya mengandalkan skill saat ini, tetapi harus ditunjang oleh informasi akurat melalui networking (relasi) karena banyak fresh graduate belum tahu harus melamar ke mana tanpa bimbingan praktisi.',
-        speaker: 'Oliver Patrick Lumentra',
+        speaker: 'Oliver Patrick Lumenta',
         role: 'Area Sales Manager OT Group',
         timestamp: '01:28 – 02:24 & 10:44 – 11:57',
       },
@@ -318,7 +318,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       'Menyiapkan SKL & memulai pengiriman lamaran pertama dalam H+7 setelah lulus sidang skripsi.',
     ],
     sumber:
-      'Badan Pusat Statistik (BPS) — Keadaan Ketenagakerjaan Indonesia (2025); Harvard Office of Career Services — Career Exploration Framework; Wawancara Tacit Alumni UNKLAB (Oliver Patrick Lumentra, Vicco Manopo, & Francis Figo Repu, November 2026).',
+      'Badan Pusat Statistik (BPS) — Keadaan Ketenagakerjaan Indonesia (2025); Harvard Office of Career Services — Career Exploration Framework; Wawancara Tacit Alumni UNKLAB (Oliver Patrick Lumenta, Vicco Manopo, & Francis Figo Repu, November 2026).',
     updatedAt: '17 November 2026',
   },
   {
@@ -373,7 +373,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       {
         quote:
           'Sebagai user interviewer untuk posisi tim kami, bagi saya CV yang menarik untuk dilihat adalah CV yang tidak bertele-tele: singkat, padat, namun mampu langsung menjelaskan kekuatan utama yang dimiliki oleh calon pelamar.',
-        speaker: 'Oliver Patrick Lumentra',
+        speaker: 'Oliver Patrick Lumenta',
         role: 'Area Sales Manager & User Interviewer OT Group',
         timestamp: '04:47 – 05:45',
       },
@@ -393,7 +393,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       'Kekuatan utama, hard skills, dan sertifikasi relevan diletakkan jelas di paruh atas halaman pertama.',
     ],
     sumber:
-      'Harvard FAS Mignone Center for Career Success (Resume & Cover Letter Guide, 2024); CakeResume ATS Formatting Standards; Wawancara Tacit Alumni UNKLAB (Vicco Manopo, Oliver Patrick Lumentra, & Francis Figo Repu, November 2026).',
+      'Harvard FAS Mignone Center for Career Success (Resume & Cover Letter Guide, 2024); CakeResume ATS Formatting Standards; Wawancara Tacit Alumni UNKLAB (Vicco Manopo, Oliver Patrick Lumenta, & Francis Figo Repu, November 2026).',
     updatedAt: '17 November 2026',
   },
   {
@@ -509,7 +509,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       {
         quote:
           'Untuk mengikuti perkembangan dunia kerja dan memantau peluang karir terbaru, saat ini saya rutin menggunakan LinkedIn di samping JobStreet.',
-        speaker: 'Oliver Patrick Lumentra',
+        speaker: 'Oliver Patrick Lumenta',
         role: 'Area Sales Manager OT Group',
         timestamp: '05:57 – 06:13',
       },
@@ -536,7 +536,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       'Bagian Projects dan Certifications sudah diisi lengkap beserta tautan bukti karya.',
     ],
     sumber:
-      'LinkedIn Talent Solutions — Official Guide to Student & Graduate Profiles (2025); Wawancara Tacit Alumni UNKLAB (Oliver Patrick Lumentra, Vicco Manopo, & Francis Figo Repu, November 2026).',
+      'LinkedIn Talent Solutions — Official Guide to Student & Graduate Profiles (2025); Wawancara Tacit Alumni UNKLAB (Oliver Patrick Lumenta, Vicco Manopo, & Francis Figo Repu, November 2026).',
     updatedAt: '17 November 2026',
   },
   {
@@ -598,7 +598,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       {
         quote:
           'Untuk pekerjaan saya sekarang, dulu saya mendapatkannya lewat JobStreet, dan untuk mengikuti perkembangan peluang karir sekarang saya memakai LinkedIn serta networking industri.',
-        speaker: 'Oliver Patrick Lumentra',
+        speaker: 'Oliver Patrick Lumenta',
         role: 'Area Sales Manager OT Group',
         timestamp: '05:57 – 06:13 & 11:24 – 11:57',
       },
@@ -611,7 +611,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       'Telah memverifikasi bahwa undangan tes berasal dari domain/kanal resmi perusahaan dan bebas pungutan biaya.',
     ],
     sumber:
-      'Kementerian Ketenagakerjaan RI — Portal Resmi SIAPkerja & Karirhub Kemnaker (2025); JobStreet by SEEK Recruitment Guide; Kompas Karier — Ciri-Ciri Lowongan Kerja Palsu; Wawancara Tacit Alumni UNKLAB (Vicco Manopo, Francis Figo Repu, & Oliver Patrick Lumentra, November 2026).',
+      'Kementerian Ketenagakerjaan RI — Portal Resmi SIAPkerja & Karirhub Kemnaker (2025); JobStreet by SEEK Recruitment Guide; Kompas Karier — Ciri-Ciri Lowongan Kerja Palsu; Wawancara Tacit Alumni UNKLAB (Vicco Manopo, Francis Figo Repu, & Oliver Patrick Lumenta, November 2026).',
     updatedAt: '17 November 2026',
   },
   {
@@ -723,7 +723,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       {
         quote:
           'Sebagai user interviewer, hal yang paling harus dihindari saat wawancara adalah menjawab secara bertele-tele dan berbohong. Kalau pelamar berbohong, biasanya ketahuan karena akan lari dari pertanyaan. Dan kesalahan paling disayangkan adalah ketika kandidat sudah lolos setengah jalan, tapi gagal karena kurang riset—tidak tahu secara spesifik posisi yang dilamar itu pekerjaannya apa dan bertanggung jawab kepada siapa.',
-        speaker: 'Oliver Patrick Lumentra',
+        speaker: 'Oliver Patrick Lumenta',
         role: 'Area Sales Manager & User Interviewer OT Group',
         timestamp: '08:28 – 10:20',
       },
@@ -750,7 +750,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       'Berlatih menjawab lantang sambil menghilangkan kebiasaan mengucapkan kata "kayaknya" atau "mungkin".',
     ],
     sumber:
-      'MIT Career Advising & Professional Development — STAR Behavioral Interview Method (2024); Harvard Business Review — Job Interview Preparation Guide; Wawancara Tacit Alumni UNKLAB (Oliver Patrick Lumentra, Francis Figo Repu, & Vicco Manopo, November 2026).',
+      'MIT Career Advising & Professional Development — STAR Behavioral Interview Method (2024); Harvard Business Review — Job Interview Preparation Guide; Wawancara Tacit Alumni UNKLAB (Oliver Patrick Lumenta, Francis Figo Repu, & Vicco Manopo, November 2026).',
     updatedAt: '17 November 2026',
   },
   {
@@ -818,7 +818,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
     readMinutes: 7,
     penulisUtama: 'Alexander Jonatan Tukoshi Rantung (Orang 9 – Dokumentasi & QC)',
     contentWriter: 'Irmando Koyo (Orang 7 – Content Writer 2)',
-    risetWawancara: 'Elgiboa A. M. Rengkung (Orang 5) & Oliver Patrick Lumentra / Avian R. Manopo',
+    risetWawancara: 'Elgiboa A. M. Rengkung (Orang 5) & Oliver Patrick Lumenta / Avian R. Manopo',
     title: 'Entri 9: Mengenali Budaya Kerja Perusahaan (Company Culture) & Strategi Sukses Melewati Masa Probation 90 Hari Pertama',
     shortTitle: 'Budaya Kerja & Probation 90 Hari',
     ringkasan:
@@ -849,7 +849,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       {
         quote:
           'Sebelum kita masuk ke sebuah perusahaan, kita wajib tahu bagaimana background perusahaan tersebut dan bagaimana company culture-nya. Informasi mengenai apa yang benar-benar terjadi di dalam perusahaan dan bagaimana budaya kerjanya sangat sulit dilihat hanya dari internet, sehingga penting sekali memperbanyak relasi (networking) untuk mendapatkan gambaran nyatanya.',
-        speaker: 'Oliver Patrick Lumentra',
+        speaker: 'Oliver Patrick Lumenta',
         role: 'Area Sales Manager OT Group',
         timestamp: '06:48 – 07:03 & 10:44 – 11:57',
       },
@@ -862,7 +862,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       'Meminta sesi umpan balik singkat (feedback 1-on-1) dari atasan pada akhir bulan ke-1 dan bulan ke-2.',
     ],
     sumber:
-      'Watkins, Michael D. (2013), The First 90 Days: Proven Strategies for Getting Up to Speed Faster and Smarter (Harvard Business Review Press); Wawancara Tacit Alumni UNKLAB (Oliver Patrick Lumentra, November 2026).',
+      'Watkins, Michael D. (2013), The First 90 Days: Proven Strategies for Getting Up to Speed Faster and Smarter (Harvard Business Review Press); Wawancara Tacit Alumni UNKLAB (Oliver Patrick Lumenta, November 2026).',
     updatedAt: '17 November 2026',
   },
   {
@@ -919,7 +919,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       {
         quote:
           'Kurang lebih membutuhkan waktu sekitar 2 sampai 4 bulan dari awal mulai mengirim lamaran, mengikuti interview, hingga akhirnya menerima offering letter.',
-        speaker: 'Oliver Patrick Lumentra',
+        speaker: 'Oliver Patrick Lumenta',
         role: 'Area Sales Manager OT Group',
         timestamp: '04:01 – 04:36',
       },
@@ -932,7 +932,7 @@ export const KNOWLEDGE_ENTRIES: KnowledgeEntry[] = [
       'Melakukan evaluasi mingguan terhadap titik gugur seleksi (CV ATS vs Psikotes vs Wawancara).',
     ],
     sumber:
-      'American Psychological Association (APA) — Managing Post-Graduation Transition & Job Search Burnout (2024); Wawancara Tacit 3 Alumni UNKLAB (Francis Figo Repu, Vicco Manopo, & Oliver Patrick Lumentra, November 2026).',
+      'American Psychological Association (APA) — Managing Post-Graduation Transition & Job Search Burnout (2024); Wawancara Tacit 3 Alumni UNKLAB (Francis Figo Repu, Vicco Manopo, & Oliver Patrick Lumenta, November 2026).',
     updatedAt: '17 November 2026',
   },
 ];
@@ -949,7 +949,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 2,
     question: 'Berapa lama rata-rata waktu yang wajar dibutuhkan fresh graduate sampai mendapat pekerjaan pertama?',
     answer:
-      'Berdasarkan pengalaman nyata ketiga narasumber kami di tiga industri berbeda (FMCG oleh Bapak Oliver Lumentra [04:06–04:30], IT Multinasional oleh Bapak Vicco Manopo [02:47–03:12], dan Perbankan BUMN BRI oleh Saudara Francis Figo Repu [02:27–02:40]), waktu tunggu normal berkisar antara 2 hingga 4 bulan.',
+      'Berdasarkan pengalaman nyata ketiga narasumber kami di tiga industri berbeda (FMCG oleh Bapak Oliver Lumenta [04:06–04:30], IT Multinasional oleh Bapak Vicco Manopo [02:47–03:12], dan Perbankan BUMN BRI oleh Saudara Francis Figo Repu [02:27–02:40]), waktu tunggu normal berkisar antara 2 hingga 4 bulan.',
     relatedEntryNo: 10,
   },
   {
@@ -970,14 +970,14 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 5,
     question: 'Platform apa yang paling efektif untuk berburu lowongan kerja bagi lulusan baru UNKLAB?',
     answer:
-      'Gunakan strategi multi-channel: Glints, LinkedIn, dan JobStreet unggul untuk korporat nasional/multinasional & startup (rekomendasi Vicco Manopo [04:20–04:35] & Oliver Lumentra [05:57–06:13]). Pantau juga website resmi pemerintah Karirhub Kemnaker serta grup WhatsApp dan Facebook alumni untuk lowongan penempatan wilayah (jalur Francis Figo Repu ke BRI Kanwil [03:46–04:12]).',
+      'Gunakan strategi multi-channel: Glints, LinkedIn, dan JobStreet unggul untuk korporat nasional/multinasional & startup (rekomendasi Vicco Manopo [04:20–04:35] & Oliver Lumenta [05:57–06:13]). Pantau juga website resmi pemerintah Karirhub Kemnaker serta grup WhatsApp dan Facebook alumni untuk lowongan penempatan wilayah (jalur Francis Figo Repu ke BRI Kanwil [03:46–04:12]).',
     relatedEntryNo: 5,
   },
   {
     id: 6,
     question: 'Apa kesalahan paling fatal saat User Interview yang sering membuat kandidat langsung gugur?',
     answer:
-      'Menurut Bapak Oliver Patrick Lumentra selaku User Interviewer di Orang Tua Group ([08:28–10:20]), kesalahan fatal tersebut adalah menjawab bertele-tele, berbohong/mengarang cerita (pasti ketahuan saat dikejar pertanyaan), serta tidak meriset sehingga tidak tahu detail posisi itu bekerja apa dan bertanggung jawab kepada siapa.',
+      'Menurut Bapak Oliver Patrick Lumenta selaku User Interviewer di Orang Tua Group ([08:28–10:20]), kesalahan fatal tersebut adalah menjawab bertele-tele, berbohong/mengarang cerita (pasti ketahuan saat dikejar pertanyaan), serta tidak meriset sehingga tidak tahu detail posisi itu bekerja apa dan bertanggung jawab kepada siapa.',
     relatedEntryNo: 7,
   },
   {
@@ -1064,7 +1064,7 @@ export const DRIVE_ASSETS: DriveAssetItem[] = [
     folderCode: 'Folder 04',
     folderName: '04_Dokumentasi_Wawancara_dan_Laporan_Tim',
     fileName: 'FINAL_REPORT_CareerBridge_Kelompok7.docx & Log_Kontribusi_Kelompok7_CareerBridge.xlsx',
-    description: 'Laporan akhir lengkap analisis SECI, daftar sumber explicit, instrumen uji coba, dan Google Sheets Log Kontribusi 9 anggota.',
+    description: 'Laporan akhir lengkap analisis SECI, daftar sumber explicit, dokumentasi tim, dan Google Sheets Log Kontribusi 9 anggota.',
     forEntries: 'Dokumentasi & QC',
   },
 ];
@@ -1144,7 +1144,7 @@ export const SECI_PHASES = [
   {
     phase: '4. Internalization',
     mode: 'Explicit → Tacit',
-    actor: 'Mahasiswa Calon Lulusan & 3 Penguji Luar',
+    actor: 'Mahasiswa Calon Lulusan & Pembaca',
     desc: 'Pengguna membaca panduan di HP/laptop, mencentang checklist aksi, mengunduh template CV & soal TPA, lalu mempraktikkannya saat seleksi kerja hingga terbentuk kecakapan pribadi baru.',
   },
 ];
