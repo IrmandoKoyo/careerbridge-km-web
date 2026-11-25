@@ -45,7 +45,7 @@ export const TEMPLATE_FILE_URLS: Record<string, string> = {
     '1iTChTdW_JAgdiEDxqlqLeULZwo3Y5wM6'
   ),
   'FINAL_REPORT_CareerBridge_Kelompok7.docx & Log_Kontribusi_Kelompok7_CareerBridge.xlsx':
-    gdriveView('1cc41bDekdn6cntm0Twon-a1V4B4lO0ub'),
+    gdriveView('1USiK_MI_IaPp5U5kqsvVrlaQ9jRpbXRR'),
 };
 
 export const DRIVE_LINKS = {
@@ -58,7 +58,7 @@ export const DRIVE_LINKS = {
   folder04Url:
     'https://drive.google.com/drive/folders/1xxLznbZb7fycIjrwjIcrTqvgzRd8JEA_?usp=sharing',
   catatanWawancaraUrl: gdriveView('1iTChTdW_JAgdiEDxqlqLeULZwo3Y5wM6'),
-  finalReportUrl: gdriveView('1cc41bDekdn6cntm0Twon-a1V4B4lO0ub'),
+  finalReportUrl: gdriveView('1USiK_MI_IaPp5U5kqsvVrlaQ9jRpbXRR'),
 };
 
 export const hasDriveUrl = (): boolean => DRIVE_LINKS.mainFolderUrl.startsWith('http');
